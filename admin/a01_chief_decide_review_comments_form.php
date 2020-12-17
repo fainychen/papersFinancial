@@ -1,0 +1,101 @@
+﻿<?php
+
+
+
+header("Content-type: application/vnd.ms-word;charset=utf-8;");
+header("Content-Disposition: attachment;Filename=評審意見表.doc");
+
+echo "<html>";
+echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8;\">";
+echo "<body>";
+echo "<div class=\"row\" style=\"text-align:center\"><span style=\"font-family:標楷體, Times New Roman;font-size:26.5px;\"><b>評審意見表</b></span></div><br/>";
+echo "<span style=\"font-family:標楷體, Times New Roman;font-size:21px;\">論文題目*：</span><br/>";
+echo "<span style=\"font-family:標楷體, Times New Roman;font-size:21px;\">評審姓名*：(免填)</span><br/>";
+echo "<span style=\"font-family:標楷體, Times New Roman;font-size:21px;\">送審日期：(免填)</span><br/>";
+echo "<span style=\"font-family:標楷體, Times New Roman;font-size:21px;\">截稿日期：(免填)</span><br/>";
+echo "<span style=\"font-family:標楷體, Times New Roman;font-size:21px;\">連絡email：conf@cerps.org.tw</span><br/>";
+echo "<br/>";
+
+echo "<style type=\"text/css\">";
+echo ".tg  {border-collapse:collapse;border-spacing:0;}";
+echo ".tg td{border-color:black;border-style:solid;border-width:1px;font-family:標楷體, Times New Roman;font-size:18.5px;";
+echo "  overflow:hidden;padding:10px 5px;word-break:normal;}";
+echo ".tg th{border-color:black;border-style:solid;border-width:1px;font-family:標楷體, Times New Roman;font-size:18.5px;";
+echo "  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}";
+echo ".tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}";
+echo ".tg .tg-1pky{border-color:inherit;text-align:center;vertical-align:top}";
+echo "</style>";
+echo "<table width=\"100%\" class=\"tg\">";
+echo "<thead>";
+echo "  <tr>";
+echo "    <th class=\"tg-0pky\"></th>";
+echo "    <th class=\"tg-1pky\"><b>極優</b></th>";
+echo "    <th class=\"tg-1pky\"><b>優</b></th>";
+echo "    <th class=\"tg-1pky\"><b>普通</b></th>";
+echo "    <th class=\"tg-1pky\"><b>差</b></th>";
+echo "    <th class=\"tg-1pky\"><b>極差</b></th>";
+echo "  </tr>";
+echo "</thead>";
+echo "<tbody>";
+echo "  <tr style=\"background-color: #D2E9FF;\">";
+echo "    <td class=\"tg-0pky\">1. 研究的原創性或創新性</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "  </tr>";
+echo "  <tr>";
+echo "    <td class=\"tg-0pky\">2. 議題的重要性</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "  </tr>";
+echo "  <tr style=\"background-color: #D2E9FF;\">";
+echo "    <td class=\"tg-0pky\">3. 文獻的相關性與完整性</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "  </tr>";
+echo "  <tr>";
+echo "    <td class=\"tg-0pky\">4. 方法的正確性與嚴謹度</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "  </tr>";
+echo "  <tr style=\"background-color: #D2E9FF;\">";
+echo "    <td class=\"tg-0pky\">5. 文章的組織結構</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "  </tr>";
+echo "  <tr>";
+echo "    <td class=\"tg-0pky\">6. 學術價值或應用價值</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "    <td class=\"tg-1pky\">□</td>";
+echo "  </tr>";
+echo "  <tr style=\"background-color: #D2E9FF;\">";
+echo "    <td class=\"tg-0pky\">7. 總結</td>";
+echo "    <td colspan=\"5\" class=\"tg-0pky\">□強烈接受(+2) □建議接受(+1)<br>□傾向接受(+0) □傾向拒絕 (-0)<br>□建議拒絕(-1) □強烈拒絕(-2)<br></td>";
+echo "  </tr>";
+echo "</tbody>";
+echo "</table>";
+
+echo "<br/>";
+echo "<span style=\"font-family:標楷體, Times New Roman;font-size:18.5px;\">8.評論及修改意見*︰（請就上述議題、論文之優缺點及具體修改方向評述，內容長度希望能盡量接近一頁，謝謝。）</span><br/>";
+echo "<br/>";
+
+echo "</body>";
+echo "</html>";
+?>
