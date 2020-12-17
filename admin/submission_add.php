@@ -512,6 +512,8 @@
             <td><a class="glyphicon glyphicon-plus btn btn-default"  id="addCoauthors"></a>
 				<a class="glyphicon glyphicon-minus btn btn-default"  id="deleteCoauthors"></a><br/><br/>
 				<input type="text" class="form-control" id="coauthors1" name="coauthors1" placeholder="<?= translate("請輸入共同作者, 格式: Name(Affiliation)") ?>"></input>
+				<div class="add_file_button" name="add_file_button" id="add_file_button">
+				</div>
 				<input style="display:none" type="text" class="form-control" id="coauthors" name="coauthors" placeholder="<?= translate("請輸入共同作者, 格式: Name(Affiliation)") ?>"></input>
 			</td>
           </tr>
