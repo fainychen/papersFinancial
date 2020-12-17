@@ -1,8 +1,8 @@
 <?php
 	//$dbhost = '127.0.0.1';
 	$dbhost = 'localhost';
-	$dbuser = 'fmadmin';
-	$dbpass = 'fm66admin@%)sql';
+	$dbuser = 'root';
+	$dbpass = '1234';
 	$dbname = 'papers';
 
 	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);

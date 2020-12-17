@@ -13,7 +13,7 @@ echo "<span style=\"font-family:標楷體, Times New Roman;font-size:21px;\">論
 echo "<span style=\"font-family:標楷體, Times New Roman;font-size:21px;\">評審姓名*：(免填)</span><br/>";
 echo "<span style=\"font-family:標楷體, Times New Roman;font-size:21px;\">送審日期：(免填)</span><br/>";
 echo "<span style=\"font-family:標楷體, Times New Roman;font-size:21px;\">截稿日期：(免填)</span><br/>";
-echo "<span style=\"font-family:標楷體, Times New Roman;font-size:21px;\">連絡email：conf@cerps.org.tw</span><br/>";
+echo "<span style=\"font-family:標楷體, Times New Roman;font-size:21px;\">連絡email：</span><br/>";
 echo "<br/>";
 
 echo "<style type=\"text/css\">";
