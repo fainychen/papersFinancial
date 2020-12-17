@@ -510,30 +510,11 @@
           <tr>
             <td class="text-center"><?= translate("共同作者") ?></td>
             <td><a class="glyphicon glyphicon-plus btn btn-default"  id="addCoauthors"></a>
-				<a class="glyphicon glyphicon-minus btn btn-default"  id="deleteCoauthors" style="display: none"></a><br/><br/>
-				<input style="display: none" type="text" class="form-control" id="coauthors1" name="coauthors1" placeholder="<?= translate("請輸入共同作者, 格式: Name(Affiliation)") ?>"></input>
-				<div  style="display: none" class="add_file_button" name="add_file_button" id="add_file_button">
+				<a class="glyphicon glyphicon-minus btn btn-default"  id="deleteCoauthors"></a><br/><br/>
+				<input type="text" class="form-control" id="coauthors1" name="coauthors1" placeholder="<?= translate("請輸入共同作者, 格式: Name(Affiliation)") ?>"></input>
+				<div class="add_file_button" name="add_file_button" id="add_file_button">
 				</div>
 				<input style="display:none" type="text" class="form-control" id="coauthors" name="coauthors" placeholder="<?= translate("請輸入共同作者, 格式: Name(Affiliation)") ?>"></input>
-			
-			
-			
-			
-						<div class="table-responsive">
-							<table class="table table-hover" width="100%" cellspacing="0">
-							  <thead>
-								<tr>
-								  <th>順序</th>
-								  <th>姓名</th>
-								  <th>服務單位</th>
-								  <th></th>
-								</tr>
-							  </thead>
-							  <tbody id="tbodyAddCoauthors">
-							  </tbody>
-							</table>
-						</div>
-			
 			</td>
           </tr>
           <tr>
@@ -688,36 +669,14 @@ include("js/PHPMailer-master/PHPMailerAutoload.php"); //匯入PHPMailer類別
 	
 	$(document).ready(function(){
 		$('#tbl').tableDnD();
-		var counter = 0;
+		var counter = 2;
 		$("#addCoauthors").click(
-			/*function(){    
+			function(){    
 				$("#add_file_button").append('<input type="text" class="form-control" id="coauthors'+counter+'" name="coauthors" placeholder="請輸入共同作者, 格式: Name(Affiliation)"> '); 
 				counter++;
-			}*/
-			function(){    
-				var tableData= "";
-				if (counter<5){
-				tableData += "<tr>"
-						  +"<td>"+(counter+1)+"<input style='display:none' type='text' class='form-control form-control-sm' placeholder='順序' name='coauthors_order"+counter+"'  id='coauthors_order"+counter+"'></td>"
-						  +"<td>"
-							+		"<input type='text' class='form-control form-control-sm' placeholder='請輸入' name='coauthors_name"+counter+"' id='coauthors_name"+counter+"'>"
-							+		"</select>"
-						  +"</td>"
-						  +"<td>"
-							+		"<input type='text' class='form-control form-control-sm' placeholder='請輸入' name='coauthors_institute"+counter+"' id='coauthors_institute"+counter+"'>"
-							+		"</select>"
-						  +"</td>"
-						  +"<td>"
-							  +"<button type='button' class='btn btn-primary btn-circle' onclick='deleteCoauthors("+counter+")'>"
-								+"刪除"
-							  +"</button>"
-						  +"</td>"
-						+"</tr>"
-						$("#tbodyAddCoauthors").append(tableData);
-						counter++;
-				}
 			}
 		);
+		
 		$("#radioDisable").click(
 			function(){
 				$("#tbl").hide();
@@ -775,9 +734,6 @@ include("js/PHPMailer-master/PHPMailerAutoload.php"); //匯入PHPMailer類別
 	radiobtn = document.getElementById("radioEnable");
 	radiobtn.checked = true;
 
-	function deleteCoauthors(i){
-		$("#tbodyAddCoauthors").find("#coauthors_order"+i).closest("tr").remove();
-	}
 	function gohome(){
 		answer = confirm("<?= translate('您確定放棄此次異動嗎？') ?>");
 		if (answer)
@@ -875,10 +831,11 @@ if($_GET['action']=="save"){
 	$paper2 = $_POST['paper2']; 
 	$presenter = check($_POST['presenter']); 
 	$topic = check($_POST['topic']); 
+	$coauthors = check($_POST['coauthors']); 
 	$paper_status = $_POST['paper_status']; 
-	//if ($coauthors == '') {
-	//	$coauthors = ';';
-	//}
+	if ($coauthors == '') {
+		$coauthors = ';';
+	}
 	$affiliations = check($_POST['affiliations']); 
 	$affiliations_email = check($_POST['affiliations_email']); 
 	$affiliations_phone = check($_POST['affiliations_phone']); 
@@ -886,15 +843,6 @@ if($_GET['action']=="save"){
 	$paper_language = $_POST['paper_language']; 
 	$review_language = $_POST['review_language']; 
 	$upload_time = date('Y-m-d');
-	
-	$coauthors = [];
-	array_push($coauthors, array('name' =>  urlencode($_POST['coauthors_name0']), 'institute' =>  urlencode($_POST['coauthors_institute0'])));
-	array_push($coauthors, array('name' =>  urlencode($_POST['coauthors_name1']), 'institute' =>  urlencode($_POST['coauthors_institute1'])));
-	array_push($coauthors, array('name' =>  urlencode($_POST['coauthors_name2']), 'institute' =>  urlencode($_POST['coauthors_institute2'])));
-	array_push($coauthors, array('name' =>  urlencode($_POST['coauthors_name3']), 'institute' =>  urlencode($_POST['coauthors_institute3'])));
-	array_push($coauthors, array('name' =>  urlencode($_POST['coauthors_name4']), 'institute' =>  urlencode($_POST['coauthors_institute4'])));
-	$coauthors = urldecode(json_encode($coauthors));
-	
 	
 	/*
 	$privateKey = "1111111111111111";

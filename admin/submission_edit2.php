@@ -171,7 +171,16 @@
 		$paper2 = $_POST['paper2']; 
 		$presenter = check($_POST['presenter']); 
 		$topic = check($_POST['topic']); 
-		$coauthors = check($_POST['coauthors']); 
+			
+		$coauthors = [];
+		array_push($coauthors, array('name' =>  urlencode($_POST['coauthors_name0']), 'institute' =>  urlencode($_POST['coauthors_institute0'])));
+		array_push($coauthors, array('name' =>  urlencode($_POST['coauthors_name1']), 'institute' =>  urlencode($_POST['coauthors_institute1'])));
+		array_push($coauthors, array('name' =>  urlencode($_POST['coauthors_name2']), 'institute' =>  urlencode($_POST['coauthors_institute2'])));
+		array_push($coauthors, array('name' =>  urlencode($_POST['coauthors_name3']), 'institute' =>  urlencode($_POST['coauthors_institute3'])));
+		array_push($coauthors, array('name' =>  urlencode($_POST['coauthors_name4']), 'institute' =>  urlencode($_POST['coauthors_institute4'])));
+		$coauthors = urldecode(json_encode($coauthors));
+		
+		
 		$paper_status = $_POST['paper_status']; 
 		$affiliations = check($_POST['affiliations']); 
 		$affiliations_email = check($_POST['affiliations_email']); 

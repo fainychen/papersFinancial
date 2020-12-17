@@ -488,10 +488,26 @@
           <tr>
             <td class="text-center"><?= translate("共同作者") ?></td>
 			<td><a class="glyphicon glyphicon-plus btn btn-default"  id="addCoauthors"></a>
-			<a class="glyphicon glyphicon-minus btn btn-default"  id="deleteCoauthors"></a><br/><br/>
-			<div id="add_file_button"></div>
+			<a style="display:none" class="glyphicon glyphicon-minus btn btn-default"  id="deleteCoauthors"></a><br/><br/>
+			<div style="display:none" id="add_file_button"></div>
 			<input style="display:none" type="text" class="form-control" id="coauthors" name="coauthors" placeholder=""></input>
-			<input style="display:none" type="text" class="form-control" id="defaultCoauthors" name="defaultCoauthors"  value="<?php echo $row_max[6] ; ?>" placeholder=""></input>
+			<textarea style="display:none" type="text" class="form-control" id="defaultCoauthors" name="defaultCoauthors"><?php echo $row_max[6] ; ?></textarea>
+			
+			
+						<div class="table-responsive">
+							<table class="table table-hover" width="100%" cellspacing="0">
+							  <thead>
+								<tr>
+								  <th>順序</th>
+								  <th>姓名</th>
+								  <th>服務單位</th>
+								  <th></th>
+								</tr>
+							  </thead>
+							  <tbody id="tbodyAddCoauthors">
+							  </tbody>
+							</table>
+						</div>
 			</td>
           </tr>
           <tr>
@@ -689,10 +705,9 @@
 		//$( "#userfile1_2" ).hide();
 		//$( "#userfile1_3" ).hide();
 		var CoauthorsValue = $( "#defaultCoauthors" ).val();
-		var NewArray = new Array();
-　		var NewArray = CoauthorsValue.split(";");
-		var counter = 1;
+		var counter = 0;
 		
+		/*
 		if ((NewArray.length-1) ==0){
 			$("#add_file_button").append('<input type="text" class="form-control" id="coauthors1" name="coauthors" placeholder="請輸入共同作者, 格式: Name(Affiliation)" > ');
 			counter++;	
@@ -700,14 +715,63 @@
 		for (var i = 0; i<NewArray.length-1; i++) {
 			$("#add_file_button").append('<input type="text" class="form-control" id="coauthors'+(i+1)+'" name="coauthors" placeholder="請輸入共同作者, 格式: Name(Affiliation)" value="'+NewArray[i]+'"> ');
 			counter++;			
-		}
+		}*/
+		
 		
 		$("#addCoauthors").click(
+		/*
 			function(){    
 				$("#add_file_button").append('<input type="text" class="form-control" id="coauthors'+counter+'" name="coauthors" placeholder="請輸入共同作者, 格式: Name(Affiliation)" > '); 
 				counter++;
+			}*/
+			function(){    
+				var tableData= "";
+				if (counter<5){
+				tableData += "<tr>"
+						  +"<td>"+(counter+1)+"<input style='display:none' type='text' class='form-control form-control-sm' placeholder='順序' name='coauthors_order"+counter+"'  id='coauthors_order"+counter+"'></td>"
+						  +"<td>"
+							+		"<input type='text' class='form-control form-control-sm' placeholder='請輸入' name='coauthors_name"+counter+"' id='coauthors_name"+counter+"'>"
+							+		"</select>"
+						  +"</td>"
+						  +"<td>"
+							+		"<input type='text' class='form-control form-control-sm' placeholder='請輸入' name='coauthors_institute"+counter+"' id='coauthors_institute"+counter+"'>"
+							+		"</select>"
+						  +"</td>"
+						  +"<td>"
+							  +"<button type='button' class='btn btn-primary btn-circle' onclick='deleteCoauthors("+counter+")'>"
+								+"刪除"
+							  +"</button>"
+						  +"</td>"
+						+"</tr>"
+						$("#tbodyAddCoauthors").append(tableData);
+						counter++;
+				}
 			}
 		);
+		
+		//var obj = JSON.parse(CoauthorsValue);
+
+		
+		$("#addCoauthors").click();
+		$("#addCoauthors").click();
+		$("#addCoauthors").click();
+		$("#addCoauthors").click();
+		$("#addCoauthors").click();
+		var mCoauthors = JSON.parse(CoauthorsValue);
+		
+		$("#coauthors_name0").val(mCoauthors[0].name);
+		$("#coauthors_name1").val(mCoauthors[1].name);
+		$("#coauthors_name2").val(mCoauthors[2].name);
+		$("#coauthors_name3").val(mCoauthors[3].name);
+		$("#coauthors_name4").val(mCoauthors[4].name);
+		
+		$("#coauthors_institute0").val(mCoauthors[0].institute);
+		$("#coauthors_institute1").val(mCoauthors[1].institute);
+		$("#coauthors_institute2").val(mCoauthors[2].institute);
+		$("#coauthors_institute3").val(mCoauthors[3].institute);
+		$("#coauthors_institute4").val(mCoauthors[4].institute);
+		
+		
 		$("#radioDisable").click(
 			function(){
 				$("#tbl").hide();
@@ -758,6 +822,10 @@
 			}
 		);
 	});
+	
+	function deleteCoauthors(i){
+		$("#tbodyAddCoauthors").find("#coauthors_order"+i).closest("tr").remove();
+	}
 	function deletephoto1(){
 		//$( "#fud1_2" ).show();
 		$( "#userfile1_2" ).show();
