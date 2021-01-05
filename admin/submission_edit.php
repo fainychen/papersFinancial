@@ -498,9 +498,9 @@
 							<table class="table table-hover" width="100%" cellspacing="0">
 							  <thead>
 								<tr>
-								  <th>順序</th>
-								  <th>姓名</th>
-								  <th>服務單位</th>
+								  <th><?= translate("順序") ?></th>
+								  <th><?= translate("姓名") ?></th>
+								  <th><?= translate("服務單位") ?></th>
 								  <th></th>
 								</tr>
 							  </thead>
@@ -509,6 +509,25 @@
 							</table>
 						</div>
 			</td>
+          </tr>
+		  <tr>
+            <td class="text-center" ><?= translate("會員身份確認") ?></td>
+			<td>
+				<?= translate("A. 作者中是否有人是臺灣財務金融學會2021年度有效會員") ?>
+				<div class="custom-control custom-radio custom-control-inline">
+				  <input type="radio" id="is_member" name="is_member" class="custom-control-input" value="0" required <?php if ($row_max[47] == '0') { ?> checked <?php } ?>>
+				  <label class="custom-control-label col-form-label-sm" for="is_member"><?= translate("否") ?>&nbsp;</label>
+				  <input type="radio" id="is_member" name="is_member" class="custom-control-input" value="1" <?php if ($row_max[47] == '1') { ?> checked <?php } ?>>
+				  <label class="custom-control-label col-form-label-sm" for="is_member"><?= translate("是") ?>&nbsp;</label>
+				</div>
+				<?= translate("B. 是作者?") ?>
+				<div class="custom-control custom-radio custom-control-inline">
+				  <input type="radio" id="is_author" name="is_author" class="custom-control-input" value="0" required <?php if ($row_max[48] == '0') { ?> checked <?php } ?>>
+				  <label class="custom-control-label col-form-label-sm" for="is_author"><?= translate("否") ?>&nbsp;</label>
+				  <input type="radio" id="is_author" name="is_author" class="custom-control-input" value="1" <?php if ($row_max[48] == '1') { ?> checked <?php } ?>>
+				  <label class="custom-control-label col-form-label-sm" for="is_author"><?= translate("是") ?>&nbsp;</label>
+				</div>
+            </td>
           </tr>
           <tr>
             <td class="text-center"><?= translate("通訊作者") ?></td>
@@ -728,18 +747,18 @@
 				var tableData= "";
 				if (counter<5){
 				tableData += "<tr>"
-						  +"<td>"+(counter+1)+"<input style='display:none' type='text' class='form-control form-control-sm' placeholder='順序' name='coauthors_order"+counter+"'  id='coauthors_order"+counter+"'></td>"
+						  +"<td>"+(counter+1)+"<input style='display:none' type='text' class='form-control form-control-sm' placeholder='' name='coauthors_order"+counter+"'  id='coauthors_order"+counter+"'></td>"
 						  +"<td>"
-							+		"<input type='text' class='form-control form-control-sm' placeholder='請輸入' name='coauthors_name"+counter+"' id='coauthors_name"+counter+"'>"
+							+		"<input type='text' class='form-control form-control-sm' placeholder='' name='coauthors_name"+counter+"' id='coauthors_name"+counter+"'>"
 							+		"</select>"
 						  +"</td>"
 						  +"<td>"
-							+		"<input type='text' class='form-control form-control-sm' placeholder='請輸入' name='coauthors_institute"+counter+"' id='coauthors_institute"+counter+"'>"
+							+		"<input type='text' class='form-control form-control-sm' placeholder='' name='coauthors_institute"+counter+"' id='coauthors_institute"+counter+"'>"
 							+		"</select>"
 						  +"</td>"
 						  +"<td>"
 							  +"<button type='button' class='btn btn-primary btn-circle' onclick='deleteCoauthors("+counter+")'>"
-								+"刪除"
+								+"<?= translate("刪除") ?>"
 							  +"</button>"
 						  +"</td>"
 						+"</tr>"

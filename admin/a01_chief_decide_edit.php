@@ -229,7 +229,45 @@
 								</tr>
 								<tr>
 									<td class="text-center"><?= translate("共同作者") ?></td>
-									<td class="text-center"><input readonly type="text" class="form-control" id="coauthors" name="coauthors" value="<?php echo $row_max[6] ; ?>" placeholder="<?= translate("共同作者") ?>"></td>
+									<td><a class="glyphicon glyphicon-plus btn btn-default"  id="addCoauthors" style="display: none"></a>
+									<a style="display:none" class="glyphicon glyphicon-minus btn btn-default"  id="deleteCoauthors"></a>
+									<div style="display:none" id="add_file_button"></div>
+									<input style="display:none" type="text" class="form-control" id="coauthors" name="coauthors" placeholder=""></input>
+									<textarea style="display:none" type="text" class="form-control" id="defaultCoauthors" name="defaultCoauthors"><?php echo $row_max[6] ; ?></textarea>
+												<div class="table-responsive">
+													<table class="table table-hover" width="100%" cellspacing="0">
+													  <thead>
+														<tr>
+														  <th><?= translate("順序") ?></th>
+														  <th><?= translate("姓名") ?></th>
+														  <th><?= translate("服務單位") ?></th>
+														  <th></th>
+														</tr>
+													  </thead>
+													  <tbody id="tbodyAddCoauthors">
+													  </tbody>
+													</table>
+												</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="text-center" ><?= translate("會員身份確認") ?></td>
+									<td>
+										<?= translate("A. 作者中是否有人是臺灣財務金融學會2021年度有效會員") ?>
+										<div class="custom-control custom-radio custom-control-inline">
+										  <input disabled type="radio" id="is_member" name="is_member" class="custom-control-input" value="0" required <?php if ($row_max[47] == '0') { ?> checked <?php } ?>>
+										  <label class="custom-control-label col-form-label-sm" for="is_member"><?= translate("否") ?>&nbsp;</label>
+										  <input disabled type="radio" id="is_member" name="is_member" class="custom-control-input" value="1" <?php if ($row_max[47] == '1') { ?> checked <?php } ?>>
+										  <label class="custom-control-label col-form-label-sm" for="is_member"><?= translate("是") ?>&nbsp;</label>
+										</div>
+										<?= translate("B. 是作者?") ?>
+										<div class="custom-control custom-radio custom-control-inline">
+										  <input disabled type="radio" id="is_author" name="is_author" class="custom-control-input" value="0" required <?php if ($row_max[48] == '0') { ?> checked <?php } ?>>
+										  <label class="custom-control-label col-form-label-sm" for="is_author"><?= translate("否") ?>&nbsp;</label>
+										  <input disabled type="radio" id="is_author" name="is_author" class="custom-control-input" value="1" <?php if ($row_max[48] == '1') { ?> checked <?php } ?>>
+										  <label class="custom-control-label col-form-label-sm" for="is_author"><?= translate("是") ?>&nbsp;</label>
+										</div>
+									</td>
 								</tr>
 								<tr>
 									<td class="text-center"><?= translate("通訊作者") ?></td>
@@ -281,6 +319,29 @@
 										<?php } ?>
 									</td>
 								</tr>
+								
+							  <tr>
+								<td class="text-center" ><?= translate("投稿論文語言") ?></td>
+								<td>
+									<div class="custom-control custom-radio custom-control-inline">
+									  <input disabled type="radio" id="paper_language" name="paper_language" class="custom-control-input" value="0" required <?php if ($row_max[45] == '0') { ?> checked <?php } ?>>
+									  <label class="custom-control-label col-form-label-sm" for="paper_language"><?= translate("中") ?>&nbsp;</label>
+									  <input disabled type="radio" id="paper_language" name="paper_language" class="custom-control-input" value="1" <?php if ($row_max[45] == '1') { ?> checked <?php } ?>>
+									  <label class="custom-control-label col-form-label-sm" for="paper_language"><?= translate("英") ?>&nbsp;</label>
+									</div>
+								</td>
+							  </tr>
+							  <tr>
+								<td class="text-center" ><?= translate("論文審查意見語言") ?></td>
+								<td>
+									<div class="custom-control custom-radio custom-control-inline">
+									  <input disabled type="radio" id="review_language" name="review_language" class="custom-control-input" value="0" required <?php if ($row_max[46] == '0') { ?> checked <?php } ?>>
+									  <label class="custom-control-label col-form-label-sm" for="review_language"><?= translate("中") ?>&nbsp;</label>
+									  <input disabled type="radio" id="review_language" name="review_language" class="custom-control-input" value="1" <?php if ($row_max[46] == '1') { ?> checked <?php } ?>>
+									  <label class="custom-control-label col-form-label-sm" for="review_language"><?= translate("英") ?>&nbsp;</label>
+									</div>
+								</td>
+							  </tr>
 								<tr style="display: none">
 									<td class="text-center" ><?= translate("我確保此篇論文從未在其它地方發表過") ?></td>
 									<td>
@@ -610,6 +671,87 @@
 		$( "#fud2_2" ).hide();
 		$( "#fud3_2" ).hide();
 		
+		var CoauthorsValue = $( "#defaultCoauthors" ).val();
+		var counter = 0;
+		$("#addCoauthors").click(
+		/*
+			function(){    
+				$("#add_file_button").append('<input type="text" class="form-control" id="coauthors'+counter+'" name="coauthors" placeholder="請輸入共同作者, 格式: Name(Affiliation)" > '); 
+				counter++;
+			}*/
+			function(){    
+				var tableData= "";
+				if (counter<5){
+				tableData += "<tr>"
+						  +"<td>"+(counter+1)+"<input style='display:none' type='text' class='form-control form-control-sm' placeholder='' name='coauthors_order"+counter+"'  id='coauthors_order"+counter+"'></td>"
+						  +"<td>"
+							+		"<input readonly type='text' class='form-control form-control-sm' placeholder='' name='coauthors_name"+counter+"' id='coauthors_name"+counter+"'>"
+							+		"</select>"
+						  +"</td>"
+						  +"<td>"
+							+		"<input readonly  type='text' class='form-control form-control-sm' placeholder='' name='coauthors_institute"+counter+"' id='coauthors_institute"+counter+"'>"
+							+		"</select>"
+						  +"</td>"
+						+"</tr>"
+						$("#tbodyAddCoauthors").append(tableData);
+						counter++;
+				}
+			}
+		);
+		
+		//var obj = JSON.parse(CoauthorsValue);
+
+		
+		$("#addCoauthors").click();
+		$("#addCoauthors").click();
+		$("#addCoauthors").click();
+		$("#addCoauthors").click();
+		$("#addCoauthors").click();
+		var mCoauthors = JSON.parse(CoauthorsValue);
+		
+		$("#coauthors_name0").val(mCoauthors[0].name);
+		$("#coauthors_name1").val(mCoauthors[1].name);
+		$("#coauthors_name2").val(mCoauthors[2].name);
+		$("#coauthors_name3").val(mCoauthors[3].name);
+		$("#coauthors_name4").val(mCoauthors[4].name);
+		
+		$("#coauthors_institute0").val(mCoauthors[0].institute);
+		$("#coauthors_institute1").val(mCoauthors[1].institute);
+		$("#coauthors_institute2").val(mCoauthors[2].institute);
+		$("#coauthors_institute3").val(mCoauthors[3].institute);
+		$("#coauthors_institute4").val(mCoauthors[4].institute);
+		
+		
+		$("#deleteCoauthors").click(
+			function(){    
+				if(counter==2){
+				alert("No more textbox to remove");
+				return false;
+				}
+				counter--;
+				$("#coauthors" + counter).remove();
+			}
+		);
+		$("#checkCoauthors").click(
+			function(){    
+				var msg = '';
+				for(var i=1; i<counter; i++){
+					msg += $("#coauthors"+i).val()+';';
+				}
+				$("#coauthors").val(msg);
+				$("#paper_status").val('1');
+			}
+		);
+		$("#checkCoauthorsWithTempSave").click(
+			function(){
+				var msg = '';
+				for(var i=1; i<counter; i++){
+					msg += $("#coauthors"+i).val()+';';
+				}
+				$("#coauthors").val(msg);
+				$("#paper_status").val('0');
+			}
+		);
 		$("#check_select").click(
 			function(){    
 				$("#author").removeAttr("disabled");
@@ -618,6 +760,9 @@
 		);
 	});
 	
+	function deleteCoauthors(i){
+		$("#tbodyAddCoauthors").find("#coauthors_order"+i).closest("tr").remove();
+	}
 	function deletephoto1(){
 		$( "#fud1_2" ).show();
 		$( "#fud1" ).hide();
