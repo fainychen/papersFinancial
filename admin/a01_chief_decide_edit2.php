@@ -260,7 +260,11 @@ require ("js/PHPMailer-master/PHPMailerAutoload.php"); //匯入PHPMailer類別
 		$a_q7 = $_POST['a_q7']; 
 		$a_q8 = $_POST['a_q8']; 
 		$a_q9 = $_POST['a_q9']; 
-		
+		$paper_language = $_POST['paper_language']; 
+		$review_language = $_POST['review_language']; 
+		$is_member = $_POST['is_member']; 
+		$is_author = $_POST['is_author']; 
+
 		if ($_COOKIE["id"] == $a_reviewer_no) {
 			$a_update_time = date('Y-m-d H:i:s');
 			mysqli_query($conn,"update reviewer set 
@@ -343,6 +347,10 @@ require ("js/PHPMailer-master/PHPMailerAutoload.php"); //匯入PHPMailer類別
 				, b_q7='$b_q7'
 				, b_q8='$b_q8'
 				, b_q9='$b_q9'
+				, paper_language='$paper_language'
+				, review_language='$review_language'
+				, is_member='$is_member' 
+				, is_author='$is_author' 
 				, chief_decide='$chief_decide'
 				, b_update_time='$b_update_time'
 				where submission_no='$ID'");   

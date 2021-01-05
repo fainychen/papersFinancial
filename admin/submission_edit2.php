@@ -189,6 +189,8 @@
 		$agree = $_POST['agree'];
 		$paper_language = $_POST['paper_language']; 
 		$review_language = $_POST['review_language']; 
+		$is_member = $_POST['is_member']; 
+		$is_author = $_POST['is_author']; 
 		$upload_time = $_POST['upload_time']; 
 		
 		/*
@@ -341,6 +343,8 @@
 				, paper_language='$paper_language'
 				, review_language='$review_language'
 				, prefer_journal='$prefer_journal' 
+				, is_member='$is_member' 
+				, is_author='$is_author' 
 				, upload_time='$upload_time' where submission_no='$submission_no'");
 			echo "<script language='javascript'> location='submission.php';</script>";				
 		}

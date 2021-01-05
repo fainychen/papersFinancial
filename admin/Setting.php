@@ -335,8 +335,14 @@
 					case "文件上傳有錯":					return "Upload Error";
 					case "文件上傳成功":					return "Upload Success";
 					case "文件上傳失敗":					return "Upload Fail";
-					case "":					return "";
-					case "":					return "";
+					
+					
+					case "順序":					        return "Order";
+					case "服務單位":					    return "Service Unit";
+					case "會員身份確認":					return "Membership Confirmation";
+					case "A. 作者中是否有人是臺灣財務金融學會2021年度有效會員?":					    return "A. Is any of the authors a valid member of The Taiwan Finance Association in 2021?";
+					case "B. 是作者?":					    return "B. Is the author?";
+					case "刪除":					   		return "Delete";
 				}
 			}
 		}

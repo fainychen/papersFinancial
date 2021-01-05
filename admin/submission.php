@@ -114,7 +114,6 @@
             <th class="text-center"><?= translate("論文主題(第二)") ?></th>
             <th class="text-center"><?= translate("報告者") ?></th>
             <th class="text-center"><?= translate("論文題目") ?></th>
-            <th class="text-center"><?= translate("共同作者") ?></th>
             <th class="text-center"><?= translate("通訊作者") ?></th>
             <th class="text-center"><?= translate("論文狀態") ?></th>
             <th class="text-center"></th>
@@ -172,7 +171,6 @@ $encrypted = mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $privateKey, $data, MCRYPT_MODE
 						</td>
             <td class="text-center"><?=$row->presenter?></td>
             <td class="text-center"><?=$row->topic; ?></td>
-            <td class="text-center"><?=$row->coauthors; ?></td>
             <td class="text-center"><?=$row->affiliations; ?></td>
             <td class="text-center"><?php if ($row->paper_status != NULL && $row->paper_status != '0')  echo '已投稿' ;
 			if ($row->paper_status != NULL && $row->paper_status == '0') echo '暫存'  ?></td>

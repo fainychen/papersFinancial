@@ -100,15 +100,15 @@ if(!empty($_GET['lang'])){
 			  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><?= translate("切換語言") ?>
 			  <span class="caret"></span></button>
 			  <ul class="dropdown-menu">
-				<li><a href="/papers/admin/login.php?lang=zh-TW"><?= translate("中文") ?></a></li>
-				<li><a href="/papers/admin/login.php?lang=en_US"><?= translate("English") ?></a></li>
+				<li><a href="./login.php?lang=zh-TW"><?= translate("中文") ?></a></li>
+				<li><a href="./login.php?lang=en_US"><?= translate("English") ?></a></li>
 			  </ul>
 			</div>
 		</span>
 		
-		<span class="navbar-brand pull-right" style="font-size: 14px;cursor:hand"><a style="color: white; text-decoration:none;" href="/papers/admin/login.php?lang=en_US">English</a></span>
+		<span class="navbar-brand pull-right" style="font-size: 14px;cursor:hand"><a style="color: white; text-decoration:none;" href="./login.php?lang=en_US">English</a></span>
 		<span class="navbar-brand pull-right" style="font-size: 14px; color: white;" >&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-		<span class="navbar-brand pull-right" style="font-size: 14px;cursor:hand"><a style="color: white; text-decoration:none;" href="/papers/admin/login.php?lang=zh-TW">繁體中文</a></span>
+		<span class="navbar-brand pull-right" style="font-size: 14px;cursor:hand"><a style="color: white; text-decoration:none;" href="./login.php?lang=zh-TW">繁體中文</a></span>
 		<span class="navbar-brand pull-right" style="font-size: 14px; color: white;" >&nbsp;&nbsp;&nbsp;&nbsp;</span>
 		<span class="navbar-brand pull-right"  data-toggle="modal" data-target="#exampleModal" style="font-size: 14px;cursor:help"><?= translate("查看版本訊息") ?></span>
 		
