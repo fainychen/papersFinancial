@@ -136,8 +136,8 @@
 									<td class="text-center"><input readonly type="text" class="form-control" id="coauthors" name="coauthors" value="<?php echo $row_max[6] ; ?>" placeholder="<?= translate("共同作者") ?>"></td>
 								</tr>
 								<tr>
-									<td class="text-center"><?= translate("通訊作者") ?></td>
-									<td class="text-center"><input readonly type="text" class="form-control" id="affiliations" name="affiliations" value="<?php echo $row_max[7] ; ?>" placeholder="<?= translate("通訊作者") ?>"></td>
+									<td class="text-center"><?= translate("通訊作者姓名") ?></td>
+									<td class="text-center"><input readonly type="text" class="form-control" id="affiliations" name="affiliations" value="<?php echo $row_max[7] ; ?>" placeholder="<?= translate("通訊作者姓名") ?>"></td>
 								</tr>
 								<tr>
 									<td class="text-center"><?= translate("通訊作者Email") ?></td>
@@ -171,7 +171,7 @@
 										<?php } ?>
 									</td>
 								</tr>
-								<tr>
+								<tr style="display: none">
 									<td class="text-center"><?= translate("著作權讓與書") ?></td>
 									<td class="">
 										<?php if ($row_max[11]== ''){ ?>

@@ -114,7 +114,7 @@
             <th class="text-center"><?= translate("論文主題(第二)") ?></th>
             <th class="text-center"><?= translate("報告者姓名") ?></th>
             <th class="text-center"><?= translate("論文題目") ?></th>
-            <th class="text-center"><?= translate("通訊作者") ?></th>
+            <th class="text-center"><?= translate("通訊作者姓名") ?></th>
             <th class="text-center"><?= translate("論文狀態") ?></th>
             <th class="text-center"></th>
           </tr>

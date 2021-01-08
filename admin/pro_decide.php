@@ -106,7 +106,7 @@
         <thead>
           <tr>
 						<th class="text-center"><?= translate("流水編號") ?></th>
-            <th class="text-center"><?= translate("通訊作者") ?></th>
+            <th class="text-center"><?= translate("通訊作者姓名") ?></th>
             <th class="text-center"><?= translate("論文編號") ?></th>
             <th class="text-center"><?= translate("論文題目") ?></th>
             <th class="text-center"><?= translate("審查結果") ?></th>

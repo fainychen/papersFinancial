@@ -187,7 +187,6 @@
             <th class="text-center"><?= translate("論文題目") ?></th>
             <th class="text-center"><?= translate("論文匿名全文版本") ?></th>
             <th class="text-center"><?= translate("論文具名全文版本") ?></th>
-            <th class="text-center"><?= translate("著作權讓與書") ?></th>
             <th class="text-center"><?= translate("投稿時間") ?></th>
             <th class="text-center"><?= translate("目前狀態") ?></th>
             <th class="text-center"></th>
@@ -202,7 +201,6 @@
             <td class="text-center"><?=$row->topic; ?></td>
             <td class="text-center"><?php if ($row->fud1 !='') { ?><a id="attachment" name="attachment" value="<?php echo $row->fud1 ; ?>" href="../<?php echo $row->fud1 ; ?>" ><button class="glyphicon glyphicon-download-alt btn btn-default"></button></a><?php } ?></td>
             <td class="text-center"><?php if ($row->fud2 !='') { ?><a id="attachment" name="attachment" value="<?php echo $row->fud2 ; ?>" href="../<?php echo $row->fud2 ; ?>" ><button class="glyphicon glyphicon-download-alt btn btn-default"></button></a><?php } ?></td>
-            <td class="text-center"><?php if ($row->fud3 !='') { ?><a id="attachment" name="attachment" value="<?php echo $row->fud3 ; ?>" href="../<?php echo $row->fud3 ; ?>" ><button class="glyphicon glyphicon-download-alt btn btn-default"></button></a><?php } ?></td>
             <td class="text-center"><?=$row->upload_time; ?></td>
             <td class="text-center">
 				<?php

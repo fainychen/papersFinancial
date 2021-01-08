@@ -529,8 +529,8 @@
             </td>
           </tr>
           <tr>
-            <td class="text-center"><?= translate("通訊作者") ?></td>
-            <td class="text-center"><input required type="text" class="form-control" id="affiliations" name="affiliations" value="<?php echo $row_max[7] ; ?>" placeholder="<?= translate("通訊作者") ?>"></td>
+            <td class="text-center"><?= translate("通訊作者姓名") ?></td>
+            <td class="text-center"><input required type="text" class="form-control" id="affiliations" name="affiliations" value="<?php echo $row_max[7] ; ?>" placeholder="<?= translate("通訊作者姓名") ?>"></td>
           </tr>
           <tr>
             <td class="text-center"><?= translate("通訊作者Email") ?></td>
@@ -541,7 +541,7 @@
             <td class="text-center"><input required type="text" class="form-control" id="affiliations_phone" name="affiliations_phone" value="<?php echo $row_max[44] ; ?>" placeholder="<?= translate("通訊作者電話") ?>"></td>
           </tr>
           <tr>
-            <td class="text-center"><?= translate("論文匿名全文版本") ?><br/><?= translate("(需使用WORD檔上傳)") ?></td>
+            <td class="text-center"><?= translate("論文匿名全文版本") ?><br/><?= translate("(需使用PDF檔上傳)") ?></td>
 				<td class="">
 					<?php if (strlen($row_max[9])<2){ ?>
 						<input style="display: none" type="file" name="fud1" id="fud1" value="<?php echo $row_max[9] ; ?>">
@@ -577,7 +577,7 @@
 				</td>
           </tr>
           <tr>
-            <td class="text-center"><?= translate("論文具名全文版本") ?><br/><br/><?= translate("(需使用WORD檔上傳)") ?></td>
+            <td class="text-center"><?= translate("論文具名全文版本") ?><br/><br/><?= translate("(需使用PDF檔上傳)") ?></td>
             <td class="">
 				<?php if (strlen($row_max[10])<2){ ?>
 					<input style="display: none" type="file" name="fud2" id="fud2" value="<?php echo $row_max[10] ; ?>">
@@ -612,7 +612,7 @@
 				<?php } ?>
 			</td>
           </tr>
-          <tr>
+          <tr style="display:none">
             <td class="text-center"><?= translate("著作權讓與書") ?><br/><br/><?= translate("(需使用PDF檔上傳)") ?></td>
             <td class="">
 				<?php if (strlen($row_max[11])<2){ ?>

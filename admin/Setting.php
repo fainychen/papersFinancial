@@ -117,11 +117,11 @@
 					case "論文題目":						return "Paper topic";
 					case "共同作者":						return "Co-author";
 					case "通訊作者":						return "Corresponding author";
+					case "通訊作者姓名":					return "Corresponding author";
 					case "通訊作者Email":					return "Corresponding author e-mail";
 					case "論文匿名全文版本":				return "Anonymous full text version of the paper";
 					case "論文具名全文版本":				return "Named - full-text version of the paper"; 
 
-					case "著作權讓與書":					return "Copyright Assignment"; 
 					case "檔案下載":						return "File download";
 					case "我確保此篇論文從未在其它地方發表過":		return "I make sure this paper has never been published elsewhere";
 					case "同意":							return "Agree";
@@ -172,7 +172,6 @@
 					case "通訊作者電話":					return "Corresponding author's phone number";
 					case "投稿論文語言":					return "The language of paper";
 					case "(需使用PDF檔上傳)":				return "Pdf";
-					case "(需使用WORD檔上傳)":				return "Word";
 					case "中":								return "Chinese";
 					case "英":								return "English";
 					case "論文審查意見語言":				return "The Language of paper review comments";
