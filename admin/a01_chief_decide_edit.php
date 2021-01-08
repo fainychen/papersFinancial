@@ -175,9 +175,9 @@
 								</tr>
 								<tr>
 									<td class="text-center"><?= translate("論文主題(第二)") ?></td>
-									<td class="text-center"><input readonly type="text" class="form-control" id="paper2" name="paper2" value="<?php echo $row_max[3] ; ?>" placeholder="<?= translate("推薦期刊志願序") ?>"></td>
+									<td class="text-center"><input readonly type="text" class="form-control" id="paper2" name="paper2" value="<?php echo $row_max[3] ; ?>" placeholder="<?= translate("論文主題(第二)") ?>"></td>
 								</tr>
-								<tr>
+								<tr style="display: none">
 									<td class="text-center"><?= translate("推薦期刊志願序") ?></td>
 									<td>
 										<input disabled id="radioDisable" type="radio" name="radio" value="0"  <?php echo($row_max[43] == '-' ? 'checked="checked"':''); ?>> <?= translate("不願意推薦期刊") ?><br>
@@ -220,10 +220,14 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="text-center"><?= translate("報告者") ?></td>
-									<td class="text-center"><input readonly type="text" class="form-control" id="presenter" name="presenter" value="<?php echo $row_max[4] ; ?>" placeholder="<?= translate("報告者") ?>"></td>
+									<td class="text-center"><?= translate("報告者姓名") ?></td>
+									<td class="text-center"><input readonly type="text" class="form-control" id="presenter" name="presenter" value="<?php echo $row_max[4] ; ?>" placeholder="<?= translate("報告者姓名") ?>"></td>
 								</tr>
-								 <tr>
+								<tr>
+									<td class="text-center"><?= translate("報告者服務單位(單位全名、國家名)") ?></td>
+									<td class="text-center"><input readonly type="text" class="form-control" id="reporter_service_unit" name="reporter_service_unit" value="<?php echo $row_max[49] ; ?>" placeholder="<?= translate("報告者服務單位(單位全名、國家名)") ?>"></td>
+								</tr>
+								<tr>
 									<td class="text-center"><?= translate("論文題目") ?></td>
 									<td class="text-center"><input readonly type="text" class="form-control" id="topic" name="topic" value="<?php echo $row_max[5] ; ?>" placeholder="<?= translate("論文題目") ?>"></td>
 								</tr>
@@ -260,13 +264,8 @@
 										  <input disabled type="radio" id="is_member" name="is_member" class="custom-control-input" value="1" <?php if ($row_max[47] == '1') { ?> checked <?php } ?>>
 										  <label class="custom-control-label col-form-label-sm" for="is_member"><?= translate("是") ?>&nbsp;</label>
 										</div>
-										<?= translate("B. 是作者?") ?>
-										<div class="custom-control custom-radio custom-control-inline">
-										  <input disabled type="radio" id="is_author" name="is_author" class="custom-control-input" value="0" required <?php if ($row_max[48] == '0') { ?> checked <?php } ?>>
-										  <label class="custom-control-label col-form-label-sm" for="is_author"><?= translate("否") ?>&nbsp;</label>
-										  <input disabled type="radio" id="is_author" name="is_author" class="custom-control-input" value="1" <?php if ($row_max[48] == '1') { ?> checked <?php } ?>>
-										  <label class="custom-control-label col-form-label-sm" for="is_author"><?= translate("是") ?>&nbsp;</label>
-										</div>
+										<?= translate("B. 請輸入有會員身分的作者姓名，若有複數作者為會員，請用分號；隔開") ?>
+										<input readonly type="text" class="form-control" id="is_author" name="is_author" value="<?php echo $row_max[48] ; ?>" >
 									</td>
 								</tr>
 								<tr>

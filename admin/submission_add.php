@@ -418,7 +418,7 @@
 			</tr>
           <tr>
 		  
-		  <tr>
+		  <tr style="display: none">
             <td class="text-center"><?= translate("推薦期刊志願序") ?></td>
 			<td>
 				<input id="radioDisable" type="radio" name="radio" value="0"> <?= translate("不願意推薦期刊") ?><br/>
@@ -500,8 +500,12 @@
             </td>
 		</tr>
           <tr>
-            <td class="text-center"><?= translate("報告者") ?></td>
-            <td class="text-center"><input required type="text" class="form-control" id="presenter" name="presenter" placeholder="<?= translate("報告者") ?>"></td>
+            <td class="text-center"><?= translate("報告者姓名") ?></td>
+            <td class="text-center"><input required type="text" class="form-control" id="presenter" name="presenter" placeholder="<?= translate("報告者姓名") ?>"></td>
+          </tr>
+          <tr>
+            <td class="text-center"><?= translate("報告者服務單位(單位全名、國家名)") ?></td>
+            <td class="text-center"><input required type="text" class="form-control" id="reporter_service_unit" name="reporter_service_unit" placeholder="<?= translate("報告者服務單位(單位全名、國家名)") ?>"></td>
           </tr>
 			<tr>
             <td class="text-center"><?= translate("論文題目") ?></td>
@@ -546,13 +550,8 @@
 				  <input type="radio" id="is_member" name="is_member" class="custom-control-input" value="1">
 				  <label class="custom-control-label col-form-label-sm" for="is_member"><?= translate("是") ?>&nbsp;</label>
 				</div>
-				<?= translate("B. 是作者?") ?>
-				<div class="custom-control custom-radio custom-control-inline">
-				  <input type="radio" id="is_author" name="is_author" class="custom-control-input" value="0" required>
-				  <label class="custom-control-label col-form-label-sm" for="is_author"><?= translate("否") ?>&nbsp;</label>
-				  <input type="radio" id="is_author" name="is_author" class="custom-control-input" value="1">
-				  <label class="custom-control-label col-form-label-sm" for="is_author"><?= translate("是") ?>&nbsp;</label>
-				</div>
+				<?= translate("B. 請輸入有會員身分的作者姓名，若有複數作者為會員，請用分號；隔開") ?>
+				<input required type="text" class="form-control" id="is_author" name="is_author" placeholder="">
             </td>
           </tr>
           <tr>
@@ -902,6 +901,7 @@ if($_GET['action']=="save"){
 	
 	$is_member = $_POST['is_member']; 
 	$is_author = $_POST['is_author']; 
+	$reporter_service_unit = $_POST['reporter_service_unit']; 
 	$upload_time = date('Y-m-d');
 	
 	$coauthors = [];
@@ -1069,6 +1069,7 @@ if($_GET['action']=="save"){
 			, prefer_journal='$prefer_journal'
 			, is_member='$is_member'
 			, is_author='$is_author'
+			, reporter_service_unit='$reporter_service_unit'
 			, paper_status = '$paper_status'
 			, upload_time='$upload_time'
 			");

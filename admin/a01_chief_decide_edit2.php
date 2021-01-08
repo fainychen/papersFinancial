@@ -285,6 +285,8 @@ require ("js/PHPMailer-master/PHPMailerAutoload.php"); //匯入PHPMailer類別
 		$b_q8 = $_POST['b_q8']; 
 		$b_q9 = $_POST['b_q9']; 
 		
+		$reporter_service_unit = $_POST['reporter_service_unit']; 
+		
 		if (isset($_POST['chief_decide'])){
 			$chief_decide = $_POST['chief_decide']; 
 			if ($chief_decide=='不同意收錄到國際大數據與ERP學術及實務研討會') {
@@ -327,6 +329,7 @@ require ("js/PHPMailer-master/PHPMailerAutoload.php"); //匯入PHPMailer類別
 				, a_reviewer_no='$a_reviewer_no'
 				, b_reviewer_no='$b_reviewer_no'
 				, a_reviewer_name='$a_reviewer_name'
+				, reporter_service_unit='$reporter_service_unit'
 				, a_q1='$a_q1'
 				, a_q2='$a_q2'
 				, a_q3='$a_q3'

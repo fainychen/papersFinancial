@@ -175,7 +175,7 @@ if(!empty($_GET['lang'])){
         </button>
       </div>
       <div class="modal-body">
-	  <?= translate("＊ 新功能登場囉！作者於論文投稿時，可自行進行推薦期刊志願序的偏好設定<br/>
+	  <?= translate("＊ 新功能登場囉！<br/>
 		＊ 感謝您使用本論文投稿系統，我們已修復了一些小問題並改善系統安全性及穩定度") ?>
         
       </div>

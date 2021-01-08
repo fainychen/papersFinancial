@@ -120,8 +120,12 @@
 									<td class="text-center"><input readonly type="text" class="form-control" id="paper2" name="paper2" value="<?php echo $row_max[3] ; ?>" placeholder="<?= translate("論文主題(第二)") ?>"></td>
 								</tr>
 								<tr>
-									<td class="text-center"><?= translate("報告者") ?></td>
-									<td class="text-center"><input readonly type="text" class="form-control" id="presenter" name="presenter" value="<?php echo $row_max[4] ; ?>" placeholder="<?= translate("報告者") ?>"></td>
+									<td class="text-center"><?= translate("報告者姓名") ?></td>
+									<td class="text-center"><input readonly type="text" class="form-control" id="presenter" name="presenter" value="<?php echo $row_max[4] ; ?>" placeholder="<?= translate("報告者姓名") ?>"></td>
+								</tr>
+								<tr>
+									<td class="text-center"><?= translate("報告者服務單位(單位全名、國家名)") ?></td>
+									<td class="text-center"><input readonly type="text" class="form-control" id="reporter_service_unit" name="reporter_service_unit" value="<?php echo $row_max[49] ; ?>" placeholder="<?= translate("報告者服務單位(單位全名、國家名)") ?>"></td>
 								</tr>
 								<tr>
 									<td class="text-center"><?= translate("論文題目") ?></td>

@@ -46,8 +46,8 @@
 					case "審查委員":						return "Reviewer";
 					case "大會工作人員":					return "Conference Staff";
 					case "系統管理員":						return "System Administrator";
-					case "＊ 新功能登場囉！作者於論文投稿時，可自行進行推薦期刊志願序的偏好設定<br/>
-		＊ 感謝您使用本論文投稿系統，我們已修復了一些小問題並改善系統安全性及穩定度":						return "＊ New features are available! Authors can make their own preference settings for the voluntary order of recommended journals when submitting a manuscript<br/>
+					case "＊ 新功能登場囉！<br/>
+		＊ 感謝您使用本論文投稿系統，我們已修復了一些小問題並改善系統安全性及穩定度":						return "＊ New features are available! <br/>
 ＊ Thank you for using this paper submission system, we have fixed some minor problems and improved system security and stability";
 					case "登入":							return "Log In";
 					case "作者註冊":						return "Author Registration";
@@ -112,7 +112,8 @@
 					case "索引":							return "Index";
 					case "限制條件":						return "Limitation";
 					case "推薦流程":						return "Recommended process";
-					case "報告者":							return "Presenter";
+					case "報告者姓名":						return "Presenter Name";
+					case "報告者服務單位(單位全名、國家名)":	return "Presenter Service Unit(Full name of unit, country name)";
 					case "論文題目":						return "Paper topic";
 					case "共同作者":						return "Co-author";
 					case "通訊作者":						return "Corresponding author";
@@ -341,7 +342,7 @@
 					case "服務單位":					    return "Service Unit";
 					case "會員身份確認":					return "Membership Confirmation";
 					case "A. 作者中是否有人是臺灣財務金融學會2021年度有效會員?":					    return "A. Is any of the authors a valid member of The Taiwan Finance Association in 2021?";
-					case "B. 是作者?":					    return "B. Is the author?";
+					case "B. 請輸入有會員身分的作者姓名，若有複數作者為會員，請用分號；隔開":					    return "B. Please enter the name of the author who is a member. If there are multiple authors as members, please use semicolons; separate";
 					case "刪除":					   		return "Delete";
 				}
 			}
