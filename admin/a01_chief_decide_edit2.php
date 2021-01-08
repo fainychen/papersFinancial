@@ -286,6 +286,8 @@ require ("js/PHPMailer-master/PHPMailerAutoload.php"); //匯入PHPMailer類別
 		$b_q9 = $_POST['b_q9']; 
 		
 		$reporter_service_unit = $_POST['reporter_service_unit']; 
+		$presenter_eng = $_POST['presenter_eng']; 
+		$reporter_service_unit_eng = $_POST['reporter_service_unit_eng']; 
 		
 		if (isset($_POST['chief_decide'])){
 			$chief_decide = $_POST['chief_decide']; 
@@ -330,6 +332,8 @@ require ("js/PHPMailer-master/PHPMailerAutoload.php"); //匯入PHPMailer類別
 				, b_reviewer_no='$b_reviewer_no'
 				, a_reviewer_name='$a_reviewer_name'
 				, reporter_service_unit='$reporter_service_unit'
+				, presenter_eng='$presenter_eng'
+				, reporter_service_unit_eng='$reporter_service_unit_eng'
 				, a_q1='$a_q1'
 				, a_q2='$a_q2'
 				, a_q3='$a_q3'

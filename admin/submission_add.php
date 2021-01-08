@@ -500,13 +500,21 @@
             </td>
 		</tr>
           <tr>
-            <td class="text-center"><?= translate("報告者姓名") ?></td>
-            <td class="text-center"><input required type="text" class="form-control" id="presenter" name="presenter" placeholder="<?= translate("報告者姓名") ?>"></td>
+            <td class="text-center"><?= translate("報告者姓名(中文)") ?></td>
+            <td class="text-center"><input required type="text" class="form-control" id="presenter" name="presenter" placeholder="<?= translate("報告者姓名(中文)") ?>"></td>
           </tr>
           <tr>
-            <td class="text-center"><?= translate("報告者服務單位(單位全名、國家名)") ?></td>
-            <td class="text-center"><input required type="text" class="form-control" id="reporter_service_unit" name="reporter_service_unit" placeholder="<?= translate("報告者服務單位(單位全名、國家名)") ?>"></td>
+            <td class="text-center"><?= translate("報告者服務單位(單位全名、國家名)(中文)") ?></td>
+            <td class="text-center"><input required type="text" class="form-control" id="reporter_service_unit" name="reporter_service_unit" placeholder="<?= translate("報告者服務單位(單位全名、國家名)(中文)") ?>"></td>
           </tr>
+			<tr>
+				<td class="text-center"><?= translate("報告者姓名(英文)") ?></td>
+				<td class="text-center"><input required type="text" class="form-control" id="presenter_eng" name="presenter_eng" placeholder="<?= translate("報告者姓名(英文)") ?>"></td>
+			</tr>
+			<tr>
+				<td class="text-center"><?= translate("報告者服務單位(單位全名、國家名)(英文)") ?></td>
+				<td class="text-center"><input required type="text" class="form-control" id="reporter_service_unit_eng" name="reporter_service_unit_eng" placeholder="<?= translate("報告者服務單位(單位全名、國家名)(英文)") ?>"></td>
+			</tr>
 			<tr>
             <td class="text-center"><?= translate("論文題目") ?></td>
             <td class="text-center"><input required type="text" class="form-control" id="topic" name="topic" placeholder="<?= translate("論文題目") ?>"></td>
@@ -901,6 +909,8 @@ if($_GET['action']=="save"){
 	$is_member = $_POST['is_member']; 
 	$is_author = $_POST['is_author']; 
 	$reporter_service_unit = $_POST['reporter_service_unit']; 
+	$presenter_eng = $_POST['presenter_eng']; 
+	$reporter_service_unit_eng = $_POST['reporter_service_unit_eng']; 
 	$upload_time = date('Y-m-d');
 	
 	$coauthors = [];
@@ -1069,6 +1079,8 @@ if($_GET['action']=="save"){
 			, is_member='$is_member'
 			, is_author='$is_author'
 			, reporter_service_unit='$reporter_service_unit'
+			, presenter_eng='$presenter_eng'
+			, reporter_service_unit_eng='$reporter_service_unit_eng'
 			, paper_status = '$paper_status'
 			, upload_time='$upload_time'
 			");

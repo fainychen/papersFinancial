@@ -192,6 +192,8 @@
 		$is_member = $_POST['is_member']; 
 		$is_author = $_POST['is_author']; 
 		$reporter_service_unit = $_POST['reporter_service_unit']; 
+		$presenter_eng = $_POST['presenter_eng']; 
+		$reporter_service_unit_eng = $_POST['reporter_service_unit_eng']; 
 		$upload_time = $_POST['upload_time']; 
 		
 		/*
@@ -347,6 +349,8 @@
 				, is_member='$is_member' 
 				, is_author='$is_author' 
 				, reporter_service_unit='$reporter_service_unit' 
+				, presenter_eng='$presenter_eng'
+				, reporter_service_unit_eng='$reporter_service_unit_eng'
 				, upload_time='$upload_time' where submission_no='$submission_no'");
 			echo "<script language='javascript'> location='submission.php';</script>";				
 		}

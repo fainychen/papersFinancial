@@ -229,6 +229,9 @@ require ("js/PHPMailer-master/PHPMailerAutoload.php"); //匯入PHPMailer類別
 		$paper3 = $_POST['paper3']; 
 		$update_time = $_POST['update_time']; 
 		$reporter_service_unit = $_POST['reporter_service_unit']; 
+		$presenter_eng = $_POST['presenter_eng']; 
+		$reporter_service_unit_eng = $_POST['reporter_service_unit_eng']; 
+		
 		$sql_max = "SELECT * FROM submission where submission_no = '$ID'";
 		
 		$result_max = mysqli_query($conn, $sql_max);
@@ -300,6 +303,8 @@ require ("js/PHPMailer-master/PHPMailerAutoload.php"); //匯入PHPMailer類別
 				, fud3='$fud3'
 				, agree='$agree' 
 				, reporter_service_unit='$reporter_service_unit' 
+				, presenter_eng='$presenter_eng'
+				, reporter_service_unit_eng='$reporter_service_unit_eng'
 				, upload_time='$upload_time'
 				, paper3='$paper3'
 				, paper_status='$paper_status'

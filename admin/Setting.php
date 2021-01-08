@@ -112,8 +112,10 @@
 					case "索引":							return "Index";
 					case "限制條件":						return "Limitation";
 					case "推薦流程":						return "Recommended process";
-					case "報告者姓名":						return "Presenter Name";
-					case "報告者服務單位(單位全名、國家名)":	return "Presenter Service Unit(Full name of unit, country name)";
+					case "報告者姓名(中文)":				return "Presenter Name (Chinese)";
+					case "報告者服務單位(單位全名、國家名)(中文)":	return "Presenter Service Unit(Full name of unit, country name)(Chinese)";
+					case "報告者姓名(英文)":				return "Presenter Name (English)";
+					case "報告者服務單位(單位全名、國家名)(英文)":	return "Presenter Service Unit(Full name of unit, country name)(English)";
 					case "論文題目":						return "Paper topic";
 					case "共同作者":						return "Co-author";
 					case "通訊作者":						return "Corresponding author";
