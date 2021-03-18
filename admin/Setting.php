@@ -125,7 +125,7 @@
 					case "論文具名全文版本":				return "Named - full-text version of the paper"; 
 
 					case "檔案下載":						return "File download";
-					case "我確保此篇論文從未在其它地方發表過":		return "I make sure this paper has never been published elsewhere";
+					case "我確保此篇論文非已被接受的期刊論文":		return "I make sure that this paper is not an accepted journal paper";
 					case "同意":							return "Agree";
 					case "不同意":							return "Disagree";
 					case "投稿時間":						return "Submission time";

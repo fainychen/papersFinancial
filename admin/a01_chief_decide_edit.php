@@ -220,20 +220,20 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="text-center"><?= translate("報告者姓名(中文)") ?></td>
-									<td class="text-center"><input readonly type="text" class="form-control" id="presenter" name="presenter" value="<?php echo $row_max[4] ; ?>" placeholder="<?= translate("報告者姓名(中文)") ?>"></td>
-								</tr>
-								<tr>
-									<td class="text-center"><?= translate("報告者服務單位(單位全名、國家名)(中文)") ?></td>
-									<td class="text-center"><input readonly type="text" class="form-control" id="reporter_service_unit" name="reporter_service_unit" value="<?php echo $row_max[49] ; ?>" placeholder="<?= translate("報告者服務單位(單位全名、國家名)(中文)") ?>"></td>
-								</tr>
-								<tr>
 									<td class="text-center"><?= translate("報告者姓名(英文)") ?></td>
 									<td class="text-center"><input readonly type="text" class="form-control" id="presenter_eng" name="presenter_eng" value="<?php echo $row_max[50] ; ?>" placeholder="<?= translate("報告者姓名(英文)") ?>"></td>
 								</tr>
 								<tr>
 									<td class="text-center"><?= translate("報告者服務單位(單位全名、國家名)(英文)") ?></td>
 									<td class="text-center"><input readonly type="text" class="form-control" id="reporter_service_unit_eng" name="reporter_service_unit_eng" value="<?php echo $row_max[51] ; ?>" placeholder="<?= translate("報告者服務單位(單位全名、國家名)(英文)") ?>"></td>
+								</tr>
+								<tr>
+									<td class="text-center"><?= translate("報告者姓名(中文)") ?></td>
+									<td class="text-center"><input readonly type="text" class="form-control" id="presenter" name="presenter" value="<?php echo $row_max[4] ; ?>" placeholder="<?= translate("報告者姓名(中文)") ?>"></td>
+								</tr>
+								<tr>
+									<td class="text-center"><?= translate("報告者服務單位(單位全名、國家名)(中文)") ?></td>
+									<td class="text-center"><input readonly type="text" class="form-control" id="reporter_service_unit" name="reporter_service_unit" value="<?php echo $row_max[49] ; ?>" placeholder="<?= translate("報告者服務單位(單位全名、國家名)(中文)") ?>"></td>
 								</tr>
 								<tr>
 									<td class="text-center"><?= translate("論文題目") ?></td>
@@ -350,7 +350,7 @@
 								</td>
 							  </tr>
 								<tr style="display: none">
-									<td class="text-center" ><?= translate("我確保此篇論文從未在其它地方發表過") ?></td>
+									<td class="text-center" ><?= translate("我確保此篇論文非已被接受的期刊論文") ?></td>
 									<td>
 										<select class="selectpicker" name="agree" id="agree" disabled>
 											<option value="Y" <?php if ($row_max[12] == 'Y') echo ' selected="selected"'; ?>  ><?= translate("同意") ?></option>
